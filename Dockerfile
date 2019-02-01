@@ -4,8 +4,6 @@ MAINTAINER Andrea Sessa <andrea.sessa@cleafy.com>
 RUN apt update
 RUN apt -yq install curl build-essential usbutils
 
-RUN useradd -ms /bin/bash cleafy
-
 # INSTALL MAVEN
 RUN apt install -yq maven
 
@@ -24,8 +22,8 @@ ENV appium_args "-p 4723"
 ENV appium_version 1.10.1
 RUN npm install -g appium@${appium_version} --unsafe-perm=true --allow-root
 
-ADD files/insecure_shared_adbkey /home/cleafy/.android/adbkey
-ADD files/insecure_shared_adbkey.pub /home/cleafy/.android/adbkey.pub
+ADD files/insecure_shared_adbkey /home/jenkins/.android/adbkey
+ADD files/insecure_shared_adbkey.pub /home/jenkins/.android/adbkey.pub
 
 RUN apt-get -y install supervisor
 RUN mkdir -p /var/log/supervisor
