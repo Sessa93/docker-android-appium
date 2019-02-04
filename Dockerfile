@@ -30,6 +30,7 @@ RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN adb kill-server
 RUN adb start-server
+RUN adb devices
 
 EXPOSE 22
 CMD ["/usr/bin/supervisord"]
