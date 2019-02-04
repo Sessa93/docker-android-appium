@@ -1,6 +1,8 @@
 FROM codetroopers/jenkins-slave-jdk8-android:22-22.0.1-x86
 MAINTAINER Andrea Sessa <andrea.sessa@cleafy.com>
 
+WORKDIR /home/jenkins
+
 RUN apt update
 RUN apt -yq install curl build-essential usbutils
 
@@ -15,7 +17,6 @@ RUN apt-get update -yq \
 RUN curl -O https://npmjs.com/install.sh | sh
 
 RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --force-yes expect git wget libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1 unzip && apt-get clean
-
 
 # INSTALL APPIUM
 ENV appium_args "-p 4723"
