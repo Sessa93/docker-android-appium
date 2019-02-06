@@ -21,7 +21,7 @@ RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --force
 # INSTALL APPIUM
 ENV appium_args "-p 4723"
 ENV appium_version 1.10.1
-RUN npm install -g appium@${appium_version} --unsafe-perm=true --allow-root
+RUN npm install -g appium@${appium_version} --chromedriver_version="2.46" --unsafe-perm=true --allow-root
 
 ADD files/insecure_shared_adbkey /home/jenkins/.android/adbkey
 ADD files/insecure_shared_adbkey.pub /home/jenkins/.android/adbkey.pub
