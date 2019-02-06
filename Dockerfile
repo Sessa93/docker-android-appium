@@ -1,4 +1,4 @@
-FROM codetroopers/jenkins-slave-jdk8-android:22-22.0.1-x86
+FROM codetroopers/jenkins-slave-jdk8-android:25_25.0.3-x86
 MAINTAINER Andrea Sessa <andrea.sessa@cleafy.com>
 
 WORKDIR /home/jenkins
